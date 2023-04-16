@@ -1,2 +1,0 @@
-const e=document.querySelector("button"),t=document.querySelector('input[name="delay"]'),n=document.querySelector('input[name="step"]'),o=document.querySelector('input[name="amount"]');e.addEventListener("submit",(function(e){e.preventDefault();let l=o.value;console.log(t.value);const u=setInterval((()=>{var e,n;l<0&&clearInterval(u),e=l,n=t.value,Math.random()>.3?console.log(`✅ Fulfilled promise ${e} in ${n}ms`):console.log(`❌ Rejected promise ${e} in ${n}ms`),l-=1}),n)}));
-//# sourceMappingURL=03-promises.887ac6fa.js.map
