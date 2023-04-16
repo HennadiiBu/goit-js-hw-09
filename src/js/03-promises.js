@@ -18,18 +18,20 @@ function createPromise(position, delay) {
   });
 }
 
-const createPromicesBtn = document.querySelector('button');
-const promiceDelay = document.querySelector('input[name="delay"]');
-const promiceStep = document.querySelector('input[name="step"]');
-const promiceAmount = document.querySelector('input[name="amount"]');
+const refs = {
+  createPromicesBtn: document.querySelector('button'),
+  promiceDelay: document.querySelector('input[name="delay"]'),
+  promiceStep: document.querySelector('input[name="step"]'),
+  promiceAmount: document.querySelector('input[name="amount"]'),
+};
 
-createPromicesBtn.addEventListener('click', onCreatePromices);
+refs.createPromicesBtn.addEventListener('click', onCreatePromices);
 
 function onCreatePromices(event) {
   event.preventDefault();
   let counter = 1;
-  let amount = Number(promiceAmount.value);
-  let startDelay = Number(promiceDelay.value);
+  let amount = Number(refs.promiceAmount.value);
+  let startDelay = Number(refs.promiceDelay.value);
 
   const promice = setInterval(() => {
     if (counter === amount) {
@@ -38,6 +40,7 @@ function onCreatePromices(event) {
     createPromise(counter, startDelay);
     counter += 1;
     startDelay =
-      Number(promiceDelay.value) + Number(promiceStep.value) * (counter - 1);
-  }, Number(promiceStep.value) * (counter - 1));
+      Number(refs.promiceDelay.value) +
+      Number(refs.promiceStep.value) * (counter - 1);
+  }, Number(refs.promiceStep.value) * (counter - 1));
 }
