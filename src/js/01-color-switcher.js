@@ -11,12 +11,18 @@ let timeOut;
 startButton.addEventListener('click', onStartButton);
 stopButton.addEventListener('click', onStopButton);
 
+stopButton.disabled = true;
+
 function onStartButton() {
   timeOut = setInterval(() => {
     document.body.style.backgroundColor = getRandomHexColor();
   }, 1000);
+  startButton.disabled = true;
+  stopButton.disabled = false;
 }
 
 function onStopButton() {
   clearInterval(timeOut);
+  startButton.disabled = false;
+  stopButton.disabled = true;
 }
