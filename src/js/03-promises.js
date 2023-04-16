@@ -19,13 +19,14 @@ createPromicesBtn.addEventListener('submit', onCreatePromices);
 function onCreatePromices(event) {
   event.preventDefault();
 
-  let amount = promiceAmount.value;
-  console.log(promiceDelay.value);
-  const promice = setInterval(() => {
-    if (amount < 0) {
-      clearInterval(promice);
-    }
-    createPromise(amount, promiceDelay.value);
-    amount -= 1;
-  }, promiceStep);
+  console.log(`123`);
+  // let amount = promiceAmount.value;
+
+  // const promice = setInterval(() => {
+  //   if (amount < 0) {
+  //     clearInterval(promice);
+  //   }
+  //   createPromise(amount, promiceDelay.value);
+  //   amount -= 1;
+  // }, promiceStep);
 }
