@@ -48,6 +48,7 @@ const dateToday = new Date(userDateFromInput.value);
 startButton.addEventListener('click', onStartButton);
 
 function onStartButton() {
+  startButton.disabled = true;
   const userDate = new Date(userDateFromInput.value);
   let timeRenains = userDate - dateToday;
 
@@ -70,3 +71,4 @@ function onStartButton() {
     timeRenains -= 1000;
   }, 1000);
 }
+startButton.disabled = true;
